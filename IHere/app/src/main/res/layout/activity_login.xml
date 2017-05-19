@@ -4,6 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.soi.ihere.LoginActivity">
+    tools:context="com.example.soi.ihere.LoginActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+    <EditText
+        android:id="@+id/lgTxtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:ems="10"
+        android:hint="user name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lgTxtPassword"
+        app:layout_constraintLeft_toLeftOf="@+id/lgTxtPassword"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <EditText
+        android:id="@+id/lgTxtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="71dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="147dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Switch
+        android:id="@+id/lgSwRememberAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:freezesText="false"
+        android:splitTrack="false"
+        android:text="Remember   "
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/lgTxtPassword"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/lgTxtPassword" />
+
+    <TextView
+        android:id="@+id/lgTxtRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Create a new account?"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="@+id/lgSwRememberAccount"
+        app:layout_constraintTop_toBottomOf="@+id/lgSwRememberAccount"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/lgBtnExit"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="35dp"
+        android:text="Exit"
+        app:layout_constraintLeft_toLeftOf="@+id/lgTxtRegister"
+        app:layout_constraintTop_toBottomOf="@+id/lgTxtRegister"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/lgBtnLogin"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:text="Login"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lgBtnExit"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/lgBtnExit"
+        tools:ignore="MissingConstraints"
+        tools:layout_constraintBaseline_creator="1" />
+
+    <TextView
+        android:id="@+id/lgAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="67dp"
+        android:layout_marginTop="69dp"
+        android:text="IHere"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/lgTxtUserName"
+        app:layout_constraintLeft_toLeftOf="@+id/lgTxtUserName"
+        app:layout_constraintRight_toRightOf="@+id/lgTxtUserName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
 </android.support.constraint.ConstraintLayout>
