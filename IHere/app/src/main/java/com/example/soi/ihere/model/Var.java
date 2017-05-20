@@ -5,4 +5,5 @@ package com.example.soi.ihere.model;
  */
 
 public class Var {
+    public static User user;
 }

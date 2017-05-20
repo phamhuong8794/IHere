@@ -1,6 +1,7 @@
 package com.example.soi.ihere;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +12,9 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.soi.ihere.control.Controller;
 import com.example.soi.ihere.model.User;
+import com.example.soi.ihere.model.Var;
 
 public class LoginActivity extends AppCompatActivity{
 
@@ -33,17 +36,14 @@ public class LoginActivity extends AppCompatActivity{
         register = (TextView) findViewById(R.id.lgTxtRegister);
         remember = (Switch) findViewById(R.id.lgSwRememberAccount);
 
-
-
-
         //set onclick
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user, pass;
-                user = userName.getText().toString();
+                String email, pass;
+                email = userName.getText().toString();
                 pass = password.getText().toString();
-                if(user.length() == 0 || pass.length() == 0) {
+                if(email.length() == 0 || pass.length() == 0) {
                     AlertDialog alertDialog = new AlertDialog.Builder(LoginActivity.this).create();
                     alertDialog.setTitle("Username or password is blank");
                     alertDialog.setMessage("You need to fill in all fields username and password");
@@ -54,9 +54,12 @@ public class LoginActivity extends AppCompatActivity{
                                 }
                             });
                     alertDialog.show();
+                } else if(Controller.checkExistAcoount(new User(email, pass, null, null))){
+                    Var.user = Controller.getUser(new User(email, pass, null, null));
+
+                } else {
 
                 }
-                User userTmp = new User();
             }
         });
         btnExit.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +71,8 @@ public class LoginActivity extends AppCompatActivity{
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
         remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
